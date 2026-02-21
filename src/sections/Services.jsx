@@ -6,81 +6,51 @@ import {
   Landmark,
   ArrowRight,
 } from "lucide-react";
+import useLanguage from "../hooks/useLanguage";
 
 export default function Services() {
+  const { t } = useLanguage();
+
   const services = [
     {
       icon: Scale,
       id: "litigio",
-      title: "Litigio Civil, Mercantil y Administrativo",
-      intro: "Cuando hay que defender, defendemos con estrategia.",
-      points: [
-        "Juicios civiles y mercantiles",
-        "Recuperación de cartera",
-        "Conflictos entre socios",
-        "Defensa contra actos administrativos",
-        "Estrategia procesal integral",
-      ],
-      closing:
-        "No improvisamos litigios. Construimos defensas sólidas desde el primer día.",
+      title: t.services.titleA,
+      intro: t.services.introA,
+      points: t.services.pointsA,
+      closing: t.services.closingA,
     },
     {
       icon: Building2,
       id: "corporativo",
-      title: "Derecho Corporativo",
-      intro: "Tu empresa debe estar bien estructurada antes de crecer.",
-      points: [
-        "Constitución de sociedades",
-        "Fusiones y escisiones",
-        "Reformas estatutarias",
-        "Otorgamiento y revocación de poderes",
-        "Actas de asamblea",
-        "Cumplimiento normativo",
-      ],
-      closing: "Un negocio mal estructurado es un riesgo innecesario.",
+      title: t.services.titleB,
+      intro: t.services.introB,
+      points: t.services.pointsB,
+      closing: t.services.closingB,
     },
     {
       icon: BadgeCheck,
-      id:"propiedad",
-      title: "Propiedad Intelectual",
-      intro: "Tu marca es tu activo más valioso. Protégelo.",
-      points: [
-        "Registro de marcas ante IMPI",
-        "Contestación de impedimentos",
-        "Declaraciones de uso y renovaciones",
-        "Defensa administrativa",
-        "Estrategias de protección de branding",
-      ],
-      closing: "Sin protección, tu marca está expuesta.",
+      id: "propiedad",
+      title: t.services.titleC,
+      intro: t.services.introC,
+      points: t.services.pointsC,
+      closing: t.services.closingC,
     },
     {
       icon: FileSignature,
-      id:"contractual",
-      title: "Derecho Contractual",
-      intro: "Un buen contrato evita un mal juicio.",
-      points: [
-        "Contratos civiles y mercantiles",
-        "Contratos de prestación de servicios",
-        "NDA y confidencialidad",
-        "Licencias de marca",
-        "Contratos societarios y comerciales",
-      ],
-      closing: "Cada cláusula importa. Cada palabra protege.",
+      id: "contractual",
+      title: t.services.titleD,
+      intro: t.services.introD,
+      points: t.services.pointsD,
+      closing: t.services.closingD,
     },
     {
       icon: Landmark,
-      id:"notarial",
-      title: "Gestión Notarial",
-      intro: "Formalidad y certeza legal en cada operación.",
-      points: [
-        "Testamentos",
-        "Compraventas",
-        "Donaciones",
-        "Protocolización de sentencias",
-        "Regularización documental",
-      ],
-      closing:
-        "Nos aseguramos de que todo esté jurídicamente blindado antes de firmar.",
+      id: "notarial",
+      title: t.services.titleE,
+      intro: t.services.introE,
+      points: t.services.pointsE,
+      closing: t.services.closingE,
     },
   ];
 
@@ -90,13 +60,11 @@ export default function Services() {
         {/* Header */}
         <div className="max-w-3xl">
           <h2 className="h-title text-3xl sm:text-4xl text-primary-900">
-            Servicios legales para proteger y hacer crecer tu negocio
+            {t.services.title}
           </h2>
 
           <p className="mt-4 t-body text-primary-900/75 text-[16px]">
-            En JM & AN no solo resolvemos problemas legales. Diseñamos
-            estrategias para que tu negocio crezca con seguridad, estructura y
-            protección.
+            {t.services.desc}
           </p>
         </div>
 
@@ -109,7 +77,7 @@ export default function Services() {
               <div
                 id={service.id}
                 key={service.title}
-                className="rounded-3xl bg-white border border-primary-900/10 p-8
+                className="rounded-3xl bg-secondary-50 border border-primary-900/10 p-8
                            shadow-[0_12px_30px_rgba(0,0,0,0.05)]
                            hover:shadow-[0_18px_40px_rgba(0,0,0,0.08)]
                            transition duration-300"
@@ -154,7 +122,7 @@ export default function Services() {
                        hover:bg-accent-600 transition
                        shadow-[0_10px_25px_rgba(0,0,0,0.08)]"
           >
-            Solicitar asesoría estratégica
+            {t.services.cta}
             <ArrowRight size={18} />
           </a>
         </div>

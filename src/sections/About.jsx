@@ -1,38 +1,39 @@
 import { GraduationCap, ShieldCheck, Target, Scale } from "lucide-react";
+import useLanguage from "../hooks/useLanguage";
 
 export default function About() {
+  const { t } = useLanguage();
+
   const pillars = [
     {
       icon: Target,
-      title: "Estrategia antes que reacción",
-      desc: "Prevenimos riesgos y, si hay conflicto, actuamos con un plan claro desde el primer día.",
+      title: t.about.pillarsTitleA,
+      desc: t.about.pillarsDescA,
     },
     {
       icon: ShieldCheck,
-      title: "Protección de negocio y patrimonio",
-      desc: "Cuidamos la operación, los acuerdos, la marca y la estructura legal que sostiene el crecimiento.",
+      title: t.about.pillarsTitleB,
+      desc: t.about.pillarsDescB,
     },
     {
       icon: Scale,
-      title: "Certeza jurídica en cada decisión",
-      desc: "Reducimos incertidumbre con documentación sólida, orden y ejecución legal coherente.",
+      title: t.about.pillarsTitleC,
+      desc: t.about.pillarsDescC,
     },
   ];
 
   const founders = [
     {
-      name: "Julián Isaí Moya Gil",
-      alias: "Julian M. Gil",
-      role: "Socio fundador",
-      detail:
-        "Abogado egresado de la Facultad de Derecho UABC, Campus Tijuana.",
+      name: t.about.nameA,
+      alias: t.about.aliasA,
+      role: t.about.roleA,
+      detail: t.about.detailA,
     },
     {
-      name: "Ángel Alberto Nieves Manzo",
-      alias: "Ángel Nieves",
-      role: "Socio fundador",
-      detail:
-        "Abogado egresado de la Facultad de Derecho UABC, Campus Tijuana.",
+      name: t.about.nameB,
+      alias: t.about.aliasB,
+      role: t.about.roleB,
+      detail: t.about.detailB,
     },
   ];
 
@@ -43,23 +44,20 @@ export default function About() {
         <div className="max-w-3xl">
           <div className="inline-flex items-center gap-2 rounded-full border border-primary-900/10 bg-secondary-50 px-4 py-2 sm:py-1.5 shadow-[0_6px_16px_rgba(0,0,0,0.06)]">
             <span className="t-body text-[12px] text-primary-900/80">
-              Sobre el despacho
+              {t.about.badgeA}
             </span>
             <span className="hidden sm:inline h-1 w-1 rounded-full bg-accent-500" />
             <span className="t-body text-[12px] text-primary-900/70">
-              Historia, misión y enfoque
+              {t.about.badgeB}
             </span>
           </div>
 
           <h2 className="mt-6 h-title text-3xl sm:text-4xl text-primary-900">
-            Asesoría jurídica integral para negocios que están creciendo
+            {t.about.title}
           </h2>
 
           <p className="mt-4 t-body text-primary-900/75 text-[16px] leading-relaxed">
-            JM & AN nace con una idea simple: que emprender y escalar no
-            implique caminar a ciegas en lo legal. Acompañamos a nuestros
-            clientes a proteger sus activos, consolidar sus empresas y tomar
-            decisiones con seguridad jurídica.
+            {t.about.desc}
           </p>
         </div>
 
@@ -73,17 +71,15 @@ export default function About() {
             {/* Quote card */}
             <div className="rounded-3xl border border-primary-900/10 bg-secondary-50 p-7 sm:p-8 shadow-[0_10px_28px_rgba(0,0,0,0.05)]">
               <div className="t-body text-[13px] text-primary-900/60">
-                Nuestra misión
+                {t.about.quoteBadge}
               </div>
               <p className="mt-3 h-title text-primary-900 text-[22px] sm:text-[24px] leading-snug">
-                “Proteger y pontenciar a emprendedores y empresas mediante
-                soluciones legales integrales, con un enfoque estratégico en
-                propiedad intelectual y derecho corporativo.”
+                {t.about.quoteBadgeDesc}
               </p>
 
               <div className="mt-5 flex items-center gap-2 t-body text-[13px] text-primary-900/70">
                 <GraduationCap size={16} className="text-primary-800" />
-                Egresados de UABC, Campus Tijuana
+                {t.about.quoteBadgeExtra}
               </div>
             </div>
 
@@ -94,7 +90,7 @@ export default function About() {
                 return (
                   <div
                     key={p.title}
-                    className="rounded-2xl border border-primary-900/10 bg-white p-5
+                    className="rounded-2xl border border-primary-900/10 bg-secondary-50 p-5
                                shadow-[0_6px_18px_rgba(0,0,0,0.04)]"
                   >
                     <div className="h-10 w-10 rounded-2xl bg-primary-900 text-secondary-50 grid place-items-center">
@@ -114,16 +110,16 @@ export default function About() {
 
           {/* Right: Founders */}
           <div className="lg:col-span-5">
-            <div className="rounded-3xl border border-primary-900/10 bg-white p-7 sm:p-8 shadow-[0_10px_28px_rgba(0,0,0,0.05)]">
+            <div className="rounded-3xl border border-primary-900/10 bg-secondary-50 p-7 sm:p-8 shadow-[0_10px_28px_rgba(0,0,0,0.05)]">
               <div className="t-body text-[13px] text-primary-900/60">
-                Fundadores
+                {t.about.foundersBadge}
               </div>
 
               <div className="mt-5 space-y-4">
                 {founders.map((f) => (
                   <div
                     key={f.name}
-                    className="rounded-2xl border border-primary-900/10 bg-secondary-50 p-5"
+                    className="rounded-2xl border border-primary-900/10 bg-secondary-100 p-5"
                   >
                     <div className="t-body font-semibold text-primary-900 text-[15px] leading-snug">
                       {f.name}{" "}
@@ -143,9 +139,7 @@ export default function About() {
 
               {/* Small note */}
               <div className="mt-6 t-body text-[13px] text-primary-900/75 leading-relaxed">
-                Trabajamos con una visión práctica: orden legal, documentación
-                sólida y estrategia. Nuestro objetivo es que tu negocio avance
-                con estructura y que, si hay conflicto, estés listo.
+                {t.about.foundersNote}
               </div>
 
               <a
@@ -155,7 +149,7 @@ export default function About() {
                            hover:bg-accent-600 transition
                            shadow-[0_8px_20px_rgba(0,0,0,0.08)] focus-ring"
               >
-                Agendar consulta
+                {t.about.cta}
               </a>
             </div>
           </div>

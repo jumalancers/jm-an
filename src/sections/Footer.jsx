@@ -1,10 +1,16 @@
 import { Phone, Mail, Instagram, Facebook } from "lucide-react";
+import useLanguage from "../hooks/useLanguage";
 
 export default function Footer() {
   const year = new Date().getFullYear();
+  const { t } = useLanguage();
 
   return (
-    <footer className="bg-primary-900 text-secondary-50">
+    <footer
+      className="
+        bg-[var(--color-footer-bg)] text-[var(--color-footer-text)]
+      "
+    >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
@@ -16,17 +22,22 @@ export default function Footer() {
                 className="h-24 w-auto object-contain"
               />
             </a>
-            <p className="t-body text-secondary-50/80 text-[14px] leading-relaxed">
-              Asesoría jurídica integral para emprendedores y empresas en
-              crecimiento. Estructura, protección y defensa estratégica.
+
+            <p className="mt-4 t-body text-[14px] leading-relaxed text-[var(--color-footer-muted)]">
+              {t.footer.description}
             </p>
+
             <div className="mt-6 flex items-center gap-3">
               <a
                 href="https://www.instagram.com/jmyan_abogados"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="h-10 w-10 rounded-xl bg-secondary-50/10 flex items-center justify-center
-               hover:bg-accent-500 hover:text-white transition"
+                className="
+                  h-10 w-10 rounded-xl flex items-center justify-center
+                  border border-[var(--color-footer-border)]
+                  bg-white/5
+                  hover:bg-accent-500 hover:text-white transition
+                "
               >
                 <Instagram size={18} />
               </a>
@@ -35,8 +46,12 @@ export default function Footer() {
                 href="https://www.facebook.com/profile.php?id=61561466949460&ref=NONE_xav_ig_profile_page_web#"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="h-10 w-10 rounded-xl bg-secondary-50/10 flex items-center justify-center
-               hover:bg-accent-500 hover:text-white transition"
+                className="
+                  h-10 w-10 rounded-xl flex items-center justify-center
+                  border border-[var(--color-footer-border)]
+                  bg-white/5
+                  hover:bg-accent-500 hover:text-white transition
+                "
               >
                 <Facebook size={18} />
               </a>
@@ -46,30 +61,30 @@ export default function Footer() {
           {/* Navegación */}
           <div>
             <div className="t-body font-semibold text-[14px] mb-4">
-              Navegación
+              {t.footer.navigation}
             </div>
-            <ul className="space-y-3 t-body text-[14px] text-secondary-50/80">
+            <ul className="space-y-3 t-body text-[14px] text-[var(--color-footer-muted)]">
               <li>
                 <a
                   href="#servicios"
                   className="hover:text-accent-400 transition"
                 >
-                  Servicios
+                  {t.footer.servicios}
                 </a>
               </li>
               <li>
                 <a href="#sobre" className="hover:text-accent-400 transition">
-                  Sobre el despacho
+                  {t.footer.sobre}
                 </a>
               </li>
               <li>
                 <a href="#equipo" className="hover:text-accent-400 transition">
-                  Equipo
+                  {t.footer.equipo}
                 </a>
               </li>
               <li>
                 <a href="#valores" className="hover:text-accent-400 transition">
-                  Valores
+                  {t.footer.valores}
                 </a>
               </li>
               <li>
@@ -77,7 +92,7 @@ export default function Footer() {
                   href="#consulta"
                   className="hover:text-accent-400 transition"
                 >
-                  Contacto
+                  {t.footer.contacto}
                 </a>
               </li>
             </ul>
@@ -86,16 +101,16 @@ export default function Footer() {
           {/* Contacto */}
           <div>
             <div className="t-body font-semibold text-[14px] mb-4">
-              Contacto
+              {t.footer.contacto}
             </div>
-            <ul className="space-y-4 t-body text-[14px] text-secondary-50/80">
+            <ul className="space-y-4 t-body text-[14px] text-[var(--color-footer-muted)]">
               <li className="flex items-center gap-2">
                 <Phone size={16} className="text-accent-400" />
                 <a
-                  href="tel:+5216632044384"
+                  href="tel:+526632044384"
                   className="hover:text-accent-400 transition"
                 >
-                  +52 166 320 44384
+                  +52 663 204 4384
                 </a>
               </li>
               <li className="flex items-center gap-2">
@@ -113,23 +128,17 @@ export default function Footer() {
           {/* Legal */}
           <div>
             <div className="t-body font-semibold text-[14px] mb-4">
-              Información legal
+              {t.footer.legal}
             </div>
-            <ul className="space-y-3 t-body text-[14px] text-secondary-50/80">
+            <ul className="space-y-3 t-body text-[14px] text-[var(--color-footer-muted)]">
               <li>
                 <a
-                  href="/aviso-de-privacidad"
+                  href="/AvisoDePrivacidad.pdf"
                   className="hover:text-accent-400 transition"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  Aviso de Privacidad
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/terminos-y-condiciones"
-                  className="hover:text-accent-400 transition"
-                >
-                  Términos y Condiciones
+                  {t.footer.privacy}
                 </a>
               </li>
             </ul>
@@ -137,17 +146,21 @@ export default function Footer() {
         </div>
 
         {/* Divider */}
-        <div className="mt-12 h-px bg-secondary-50/20" />
+        <div className="mt-12 h-px bg-[var(--color-footer-border)]" />
 
         {/* Bottom */}
-        <div className="mt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-[13px] text-secondary-50/60 t-body">
-          <div>© {year} JM & AN. Todos los derechos reservados.</div>
-          <p className="text-gray-400 text-sm flex items-center gap-1">
-            Made by
+        <div className="mt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-[13px] t-body text-[var(--color-footer-muted)]">
+          <div>© {year} JM & AN. {t.footer.rights}</div>
+
+          <p className="text-[13px] flex items-center gap-1">
+            {t.footer.madeBy}
             <a
               href="https://jumalancers.com/"
               target="_blank"
-              className="relative font-semibold text-blue-400 transition-all duration-300 hover:text-white after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-0 after:bg-blue-400 after:transition-all after:duration-300 hover:after:w-full"
+              rel="noreferrer"
+              className="relative font-semibold text-accent-400 transition-colors hover:text-accent-300
+                         after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-0
+                         after:bg-accent-400 after:transition-all after:duration-300 hover:after:w-full"
             >
               Jumalancers
             </a>

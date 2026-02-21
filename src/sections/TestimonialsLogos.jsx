@@ -1,3 +1,5 @@
+import useLanguage from "../hooks/useLanguage";
+
 const logos = [
   { src: "/Logos/empresa1.gif", alt: "Empresa 1" },
   { src: "/Logos/empresa2.gif", alt: "Empresa 2" },
@@ -16,6 +18,10 @@ const logos = [
   { src: "/Logos/empresa15.png", alt: "Empresa 15" },
   { src: "/Logos/empresa16.gif", alt: "Empresa 16" },
   { src: "/Logos/empresa17.gif", alt: "Empresa 17" },
+  { src: "/Logos/empresa18.gif", alt: "Empresa 18" },
+  { src: "/Logos/empresa19.gif", alt: "Empresa 19" },
+  { src: "/Logos/empresa20.gif", alt: "Empresa 20" },
+  { src: "/Logos/empresa21.jpg", alt: "Empresa 21" },
 ];
 
 function MarqueeRow({ items, reverse = false, duration = 28 }) {
@@ -65,18 +71,18 @@ function MarqueeRow({ items, reverse = false, duration = 28 }) {
 }
 
 export default function TestimonialsLogos() {
+  const { t } = useLanguage();
+  
   return (
     <section id="clientes" className="py-16 sm:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="max-w-3xl">
           <h2 className="h-title text-3xl sm:text-4xl text-primary-900">
-            Empresas que han confiado en JM & AN
+            {t.testimonials.title}
           </h2>
           <p className="mt-4 t-body text-primary-900/75 text-[16px]">
-            Trabajamos con negocios que están construyendo, escalando o
-            protegiendo su operación. La confianza se gana con estructura y
-            resultados.
+            {t.testimonials.subtitle}
           </p>
         </div>
 

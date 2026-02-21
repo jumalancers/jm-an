@@ -1,31 +1,34 @@
 import { Shield, Scale, Lightbulb, Users, Award } from "lucide-react";
+import useLanguage from "../hooks/useLanguage";
 
 export default function Values() {
+  const { t } = useLanguage();
+  
   const values = [
     {
       icon: Shield,
-      title: "Protección",
-      desc: "Blindamos lo que construyes.",
+      title: t.valores.titleA,
+      desc: t.valores.descA,
     },
     {
       icon: Scale,
-      title: "Integridad",
-      desc: "Ética en cada decisión.",
+      title: t.valores.titleB,
+      desc: t.valores.descB,
     },
     {
       icon: Lightbulb,
-      title: "Innovación",
-      desc: "Soluciones creativas y actuales.",
+      title: t.valores.titleC,
+      desc: t.valores.descC,
     },
     {
       icon: Users,
-      title: "Cercanía",
-      desc: "Lenguaje claro y trato humano.",
+      title: t.valores.titleD,
+      desc: t.valores.descD,
     },
     {
       icon: Award,
-      title: "Excelencia",
-      desc: "Calidad en cada servicio.",
+      title: t.valores.titleE,
+      desc: t.valores.descE,
     },
   ];
 
@@ -34,24 +37,22 @@ export default function Values() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="max-w-3xl">
-          <div className="inline-flex items-center gap-2 rounded-full border border-primary-900/10 bg-white px-4 py-2 sm:py-1.5 shadow-[0_6px_16px_rgba(0,0,0,0.05)]">
+          <div className="inline-flex items-center gap-2 rounded-full border border-primary-900/10 bg-secondary-50 px-4 py-2 sm:py-1.5 shadow-[0_6px_16px_rgba(0,0,0,0.05)]">
             <span className="t-body text-[12px] text-primary-900/80">
-              Valores
+             {t.valores.badgeA}
             </span>
             <span className="hidden sm:inline h-1 w-1 rounded-full bg-accent-500" />
             <span className="t-body text-[12px] text-primary-900/70">
-              Principios que nos definen
+              {t.valores.badgeB}
             </span>
           </div>
 
           <h2 className="mt-6 h-title text-3xl sm:text-4xl text-primary-900">
-            Lo que guía cada decisión
+            {t.valores.title}
           </h2>
 
           <p className="mt-4 t-body text-primary-900/75 text-[16px] leading-relaxed">
-            Nuestro trabajo no solo se basa en conocimiento jurídico,
-            sino en principios firmes que sostienen cada asesoría,
-            cada contrato y cada estrategia.
+            {t.valores.desc}
           </p>
         </div>
 
@@ -63,7 +64,7 @@ export default function Values() {
             return (
               <div
                 key={value.title}
-                className="flex items-center rounded-3xl border border-primary-900/10 bg-white p-7
+                className="flex items-center rounded-3xl border border-primary-900/10 bg-secondary-50 p-7
                            shadow-[0_10px_28px_rgba(0,0,0,0.05)]
                            hover:shadow-[0_14px_36px_rgba(0,0,0,0.08)]
                            transition"

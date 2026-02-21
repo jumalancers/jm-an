@@ -8,28 +8,31 @@ import {
   BadgeCheck,
   FileSignature,
 } from "lucide-react";
+import useLanguage from "../hooks/useLanguage";
 
 export default function Hero() {
+  const { t } = useLanguage();
+  
   const points = [
     {
       icon: BadgeCheck,
-      title: "Marca protegida",
-      desc: "Registro y defensa ante IMPI.",
+      title: t.hero.pointA_title,
+      desc: t.hero.pointA_desc,
     },
     {
       icon: FileSignature,
-      title: "Contratos claros",
-      desc: "NDA, servicios, licencias y acuerdos.",
+      title: t.hero.pointB_title,
+      desc: t.hero.pointB_desc,
     },
     {
       icon: Building2,
-      title: "Estructura corporativa",
-      desc: "Sociedades, actas y poderes listos para crecer.",
+      title: t.hero.pointC_title,
+      desc: t.hero.pointC_desc,
     },
     {
       icon: Scale,
-      title: "Litigio estratégico",
-      desc: "Cobranza, socios y actos de autoridad.",
+      title: t.hero.pointD_title,
+      desc: t.hero.pointD_desc,
     },
   ];
 
@@ -56,29 +59,27 @@ export default function Hero() {
 "
             >
               <span className="t-body text-[11px] sm:text-[12px] text-primary-900/80 leading-snug">
-                Para emprendedores y empresas en crecimiento
+                {t.hero.badgeA}
               </span>
 
               {/* Separador solo en sm+ */}
               <span className="hidden sm:inline h-1 w-1 rounded-full bg-accent-500" />
 
               <span className="t-body text-[11px] sm:text-[12px] text-primary-900/70 leading-snug">
-                Prevención + defensa
+                {t.hero.badgeB}
               </span>
             </div>
 
             <h1 className="mt-6 sm:mt-7 h-title text-primary-900 text-[34px] leading-[1.08] sm:text-5xl sm:leading-[1.05]">
-              Crece con{" "}
+              {t.hero.titleA}{" "}
               <span className="text-accent-600 text-important">
-                estructura legal <br />
+                {t.hero.titleB}<br />
               </span>{" "}
-              y respalda cada decisión.
+              {t.hero.titleC}
             </h1>
 
             <p className="mt-4 sm:mt-5 t-body text-[15px] sm:text-[17px] text-primary-900/80 max-w-xl">
-              Armamos la base legal para que tu negocio avance con orden: marca,
-              contratos y estructura corporativa. Y si hay conflicto, litigamos
-              con estrategia para proteger tu patrimonio y tu operación.
+              {t.hero.desc}
             </p>
 
             {/* CTA */}
@@ -90,19 +91,19 @@ export default function Hero() {
                            shadow-[0_8px_20px_rgba(0,0,0,0.08)] focus-ring"
               >
                 <CalendarDays size={18} />
-                Agendar consulta
+                {t.hero.schedule}
                 <ArrowRight size={18} />
               </a>
 
               <a
-                href="tel:+5216632044384"
+                href="tel:+526632044384"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3 t-body text-[15px] font-semibold
                            border border-primary-900/15 bg-secondary-50
                            hover:bg-secondary-100 transition
                            shadow-[0_6px_16px_rgba(0,0,0,0.06)] focus-ring"
               >
                 <Phone size={18} />
-                Llamar
+                {t.hero.call}
               </a>
             </div>
 
@@ -110,17 +111,17 @@ export default function Hero() {
             <div className="mt-5 sm:mt-6 flex flex-wrap items-center gap-x-4 gap-y-2 t-body text-[13px] text-primary-900/70">
               <span className="inline-flex items-center gap-2">
                 <ShieldCheck size={16} className="text-primary-800" />
-                Atención confidencial
+                {t.hero.trustA}
               </span>
               <span className="hidden sm:inline h-1 w-1 rounded-full bg-primary-900/25" />
               <span className="inline-flex items-center gap-2">
                 <Scale size={16} className="text-primary-800" />
-                Estrategia procesal integral
+                {t.hero.trustB}
               </span>
               <span className="hidden sm:inline h-1 w-1 rounded-full bg-primary-900/25" />
               <span className="inline-flex items-center gap-2">
                 <Building2 size={16} className="text-primary-800" />
-                Enfoque de negocio
+                {t.hero.trustC}
               </span>
             </div>
 
@@ -174,9 +175,9 @@ export default function Hero() {
               {/* Small corner badge */}
               <div className="absolute top-3 left-3 sm:top-4 sm:left-4 z-20">
                 <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-black/25 px-3 py-1 backdrop-blur">
-                  <ShieldCheck size={16} className="text-secondary-50" />
-                  <span className="t-body text-[12px] text-secondary-50/90">
-                    Asesoría confidencial
+                  <ShieldCheck size={16} className="text-white/90" />
+                  <span className="t-body text-[12px] text-white/90">
+                    {t.hero.trustA}
                   </span>
                 </div>
               </div>
@@ -186,7 +187,7 @@ export default function Hero() {
                 <div className="inline-flex items-center gap-2 rounded-full border border-primary-900/10 bg-secondary-50 px-3 py-1 shadow-[0_6px_16px_rgba(0,0,0,0.06)]">
                   <span className="h-2 w-2 rounded-full bg-accent-500" />
                   <span className="t-body text-[12px] text-primary-900/70">
-                    Estructura, cumplimiento y defensa
+                    {t.hero.microNote}
                   </span>
                 </div>
               </div>

@@ -11,13 +11,21 @@ import {
   BadgeCheck,
   FileSignature,
   Landmark,
+  Sun,
+  Moon,
 } from "lucide-react";
+
+import useTheme from "../hooks/useTheme";
+import useLanguage from "../hooks/useLanguage";
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [areasOpen, setAreasOpen] = useState(false);
   const [mobileAreasOpen, setMobileAreasOpen] = useState(false);
   const areasRef = useRef(null);
+
+  const { theme, toggleTheme } = useTheme();
+  const { lang, changeLanguage, t } = useLanguage();
 
   // Close dropdown outside click + ESC
   useEffect(() => {
@@ -43,55 +51,46 @@ export default function Navbar() {
     };
   }, []);
 
+  // Lock body scroll when mobile menu open
   useEffect(() => {
-    if (mobileOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
-
-    return () => {
-      document.body.style.overflow = "auto";
-    };
+    document.body.style.overflow = mobileOpen ? "hidden" : "auto";
+    return () => (document.body.style.overflow = "auto");
   }, [mobileOpen]);
 
   const areas = [
     {
-      label: "Litigio Civil, Mercantil y Administrativo",
-      description:
-        "Defensa estratégica en juicios civiles, mercantiles y contra actos de autoridad.",
+      label: t.areas.litigation.title,
+      description: t.areas.litigation.desc,
       href: "#litigio",
       icon: Gavel,
     },
     {
-      label: "Derecho Corporativo",
-      description:
-        "Estructuración y reorganización legal de empresas con visión de crecimiento.",
+      label: t.areas.corporate.title,
+      description: t.areas.corporate.desc,
       href: "#corporativo",
       icon: Building2,
     },
     {
-      label: "Propiedad Intelectual",
-      description:
-        "Registro y defensa de marcas, activos intangibles y protección de branding.",
+      label: t.areas.ip.title,
+      description: t.areas.ip.desc,
       href: "#propiedad",
       icon: BadgeCheck,
     },
     {
-      label: "Derecho Contractual",
-      description:
-        "Redacción y revisión estratégica de contratos civiles y mercantiles.",
+      label: t.areas.contracts.title,
+      description: t.areas.contracts.desc,
       href: "#contractual",
       icon: FileSignature,
     },
     {
-      label: "Gestión Notarial",
-      description:
-        "Coordinación y formalización de actos jurídicos con certeza legal.",
+      label: t.areas.notarial.title,
+      description: t.areas.notarial.desc,
       href: "#notarial",
       icon: Landmark,
     },
   ];
+
+  const toggleLang = () => changeLanguage(lang === "es" ? "en" : "es");
 
   return (
     <header className="sticky top-0 z-50">
@@ -102,29 +101,31 @@ export default function Navbar() {
             <a href="#inicio" className="flex items-center">
               <img
                 src="/logo.png"
-                alt="Despacho Jurídico"
-                className="h-26 w-auto object-contain"
+                alt="JM & AN"
+                className="h-24 w-auto object-contain" /* <- h-26 no existe */
               />
             </a>
 
             {/* DESKTOP */}
-            <div className="hidden lg:flex items-center gap-8 t-body text-[14px]">
+            <div className="hidden lg:flex items-end gap-8 t-body text-[14px]">
               <a
                 href="#inicio"
-                className="text-primary-900 hover:text-primary-900 transition-colors t-body font-semibold"
+                className="text-primary-900 hover:text-primary-900 transition-colors font-semibold"
               >
-                Inicio
+                {t.nav.home}
               </a>
 
               {/* DROPDOWN AREAS */}
               <div className="relative" ref={areasRef}>
                 <button
                   onClick={() => setAreasOpen((v) => !v)}
-                  className="inline-flex items-center gap-2 text-primary-900 hover:text-primary-900 transition-colors t-body font-semibold"
+                  className="flex items-center text-primary-900 hover:text-primary-900 transition-colors font-semibold"
+                  aria-expanded={areasOpen}
+                  aria-haspopup="menu"
                 >
-                  <Scale size={18} />
-                  Áreas
-                  <ChevronDown size={14} />
+                  <Scale size={18} className="mr-2" />
+                  {t.nav.areas}
+                  <ChevronDown size={14} className="ml-2" />
                 </button>
 
                 <div
@@ -162,28 +163,55 @@ export default function Navbar() {
 
               <a
                 href="#sobre"
-                className="text-primary-900 hover:text-primary-900 transition-colors t-body font-semibold"
+                className="text-primary-900 hover:text-primary-900 transition-colors font-semibold"
               >
-                Sobre el despacho
+                {t.nav.about}
               </a>
 
               <a
                 href="#consulta"
-                className="text-primary-900 hover:text-primary-900 transition-colors t-body font-semibold"
+                className="text-primary-900 hover:text-primary-900 transition-colors font-semibold"
               >
-                Contacto
+                {t.nav.contact}
               </a>
             </div>
 
             {/* CTA DESKTOP */}
-            <div className="hidden lg:flex items-center gap-4">
+            <div className="hidden lg:flex items-center gap-3">
+              {/* Language (flags) */}
+              <button
+                type="button"
+                onClick={toggleLang}
+                className="inline-flex items-center justify-center h-10 w-10 rounded-xl hover:bg-secondary-100 transition"
+                aria-label={lang === "es" ? t.nav.langToEN : t.nav.langToES}
+                title={lang === "es" ? t.nav.langToEN : t.nav.langToES}
+              >
+                {lang === "es" ? (
+                  <span className="fi fi-us"></span>
+                ) : (
+                  <span className="fi fi-mx"></span>
+                )}
+              </button>
+
+              {/* Theme */}
+              <button
+                type="button"
+                onClick={toggleTheme}
+                className="inline-flex items-center justify-center h-10 w-10 rounded-xl hover:bg-secondary-100 transition"
+                aria-label={theme === "dark" ? t.nav.light : t.nav.dark}
+                title={theme === "dark" ? t.nav.light : t.nav.dark}
+              >
+                {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
+              </button>
+
               <a
                 href="https://api.whatsapp.com/send?phone=5216632044384&text=%F0%9F%92%A1Hola%2C%20me%20interesa%20conocer%20sobre%20sus%20servicios%20legales%20"
                 className="flex items-center gap-2 text-[13px] text-primary-900/80 hover:text-primary-900 transition-colors font-semibold t-body"
-                target="_blanck"
+                target="_blank"
+                rel="noreferrer"
               >
                 <Phone size={15} />
-                +52 166 320 44384
+                +52 663 204 4384
               </a>
 
               <a
@@ -193,7 +221,7 @@ export default function Navbar() {
                            shadow-[var(--shadow-soft)] focus-ring t-body"
               >
                 <CalendarDays size={16} />
-                Agendar consulta
+                {t.nav.schedule}
               </a>
             </div>
 
@@ -201,6 +229,7 @@ export default function Navbar() {
             <button
               onClick={() => setMobileOpen((v) => !v)}
               className="lg:hidden inline-flex items-center justify-center h-10 w-10 rounded-xl border border-primary-900/15 bg-secondary-50"
+              aria-label="Toggle menu"
             >
               {mobileOpen ? <X size={20} /> : <Menu size={20} />}
             </button>
@@ -209,20 +238,20 @@ export default function Navbar() {
           {/* MOBILE MENU */}
           <div
             className={`
-    ${mobileOpen ? "block" : "hidden"}
-    lg:hidden
-    max-h-[calc(100vh-120px)]
-    overflow-y-auto
-    pb-6
-  `}
+              ${mobileOpen ? "block" : "hidden"}
+              lg:hidden
+              max-h-[calc(100vh-120px)]
+              overflow-y-auto
+              pb-6
+            `}
           >
-            {" "}
             <div className="mt-3 rounded-2xl border border-primary-900/10 bg-secondary-50 shadow-[var(--shadow-card)] p-3 space-y-2">
               <a
                 href="#inicio"
+                onClick={() => setMobileOpen(false)}
                 className="block px-3 py-2 rounded-xl font-semibold text-primary-900 hover:bg-secondary-200/60"
               >
-                Inicio
+                {t.nav.home}
               </a>
 
               <div className="rounded-xl overflow-hidden">
@@ -231,7 +260,9 @@ export default function Navbar() {
                   onClick={() => setMobileAreasOpen((v) => !v)}
                   className="w-full flex items-center justify-between px-3 py-3 rounded-xl hover:bg-secondary-200/60 transition"
                 >
-                  <span className="font-semibold text-primary-900">Áreas</span>
+                  <span className="font-semibold text-primary-900">
+                    {t.nav.areas}
+                  </span>
 
                   <ChevronDown
                     size={18}
@@ -265,7 +296,6 @@ export default function Navbar() {
                             className="flex items-start gap-3 rounded-xl p-3 hover:bg-secondary-200/60 transition"
                           >
                             <Icon size={18} className="mt-1 text-primary-800" />
-
                             <div>
                               <div className="font-semibold text-primary-900">
                                 {area.label}
@@ -284,26 +314,52 @@ export default function Navbar() {
 
               <a
                 href="#sobre"
+                onClick={() => setMobileOpen(false)}
                 className="block px-3 py-2 rounded-xl font-semibold text-primary-900 hover:bg-secondary-200/60"
               >
-                Sobre el despacho
+                {t.nav.about}
               </a>
 
               <a
                 href="#consulta"
+                onClick={() => setMobileOpen(false)}
                 className="block px-3 py-2 rounded-xl font-semibold text-primary-900 hover:bg-secondary-200/60"
               >
-                Contacto
+                {t.nav.contact}
               </a>
+              {/* Language (flags) */}
+              <button
+                type="button"
+                onClick={toggleLang}
+                className="w-full inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2 hover:bg-secondary-100 font-semibold transition"
+                aria-label={lang === "es" ? t.nav.langToEN : t.nav.langToES}
+              >
+                {lang === "es" ? (
+                  <span className="fi fi-us"></span>
+                ) : (
+                  <span className="fi fi-mx"></span>
+                )}
+              </button>
+
+              {/* Theme */}
+              <button
+                type="button"
+                onClick={toggleTheme}
+                className="w-full inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2 hover:bg-secondary-100 font-semibold transition"
+              >
+                {theme === "dark" ? <Sun size={16} /> : <Moon size={16} />}
+                {theme === "dark" ? t.nav.light : t.nav.dark}
+              </button>
 
               <a
                 href="#consulta"
+                onClick={() => setMobileOpen(false)}
                 className="mt-2 w-full inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2 font-semibold
                            bg-accent-500 text-accent-50 hover:bg-accent-600 transition
                            shadow-[var(--shadow-soft)] focus-ring"
               >
                 <CalendarDays size={16} />
-                Agendar consulta
+                {t.nav.schedule}
               </a>
             </div>
           </div>

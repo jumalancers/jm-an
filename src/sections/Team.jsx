@@ -1,39 +1,41 @@
 import { useState } from "react";
 import { ArrowUpRight, X } from "lucide-react";
+import useLanguage from "../hooks/useLanguage";
 
 export default function Team() {
   const [openId, setOpenId] = useState(null);
+  const { t } = useLanguage();
 
   const team = [
     {
       id: "julian",
-      name: "Julián Isaí Moya Gil",
-      title: "Socio fundador | Litigio y Estrategia",
-      bio: "Enfoque en litigio civil, mercantil y administrativo con visión estratégica. Acompaña a empresas en escenarios de conflicto, recuperación y defensa, priorizando evidencia, táctica y estructura.",
+      name: t.team.nameA,
+      title: t.team.titleA,
+      bio: t.team.bioA,
       photo:
         "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1200&auto=format&fit=crop",
     },
     {
       id: "angel",
-      name: "Ángel Alberto Nieves Manzo",
-      title: "Socio fundador | Corporativo y Contratos",
-      bio: "Especializado en estructuración corporativa y documentación legal para empresas en crecimiento. Trabaja con constitución, poderes, actas y contratos para reducir riesgo y dar certeza a cada decisión.",
+      name: t.team.nameB,
+      title: t.team.titleB,
+      bio: t.team.bioB,
       photo:
         "https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=1200&auto=format&fit=crop",
     },
     {
       id: "asociado1",
-      name: "Asociado(a) Legal",
-      title: "Propiedad Intelectual",
-      bio: "Apoya el registro, seguimiento y defensa de marcas. Integra estrategias de protección para branding y activos intangibles, alineando lo legal con la expansión comercial.",
+      name: t.team.nameC,
+      title: t.team.titleC,
+      bio: t.team.bioC,
       photo:
         "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1200&auto=format&fit=crop",
     },
     {
       id: "asociado2",
-      name: "Asociado(a) Legal",
-      title: "Gestión Notarial y Documental",
-      bio: "Coordina procesos notariales y regularización documental. Acompaña operaciones que requieren formalidad, revisando requisitos y cuidando que todo quede jurídicamente blindado antes de firmar.",
+      name: t.team.nameD,
+      title: t.team.titleD,
+      bio: t.team.bioD,
       photo:
         "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?q=80&w=1200&auto=format&fit=crop",
     },
@@ -48,21 +50,20 @@ export default function Team() {
         <div className="max-w-3xl">
           <div className="inline-flex items-center gap-2 rounded-full border border-primary-900/10 bg-secondary-50 px-4 py-2 sm:py-1.5 shadow-[0_6px_16px_rgba(0,0,0,0.06)]">
             <span className="t-body text-[12px] text-primary-900/80">
-              El equipo
+              {t.team.badgeA}
             </span>
             <span className="hidden sm:inline h-1 w-1 rounded-full bg-accent-500" />
             <span className="t-body text-[12px] text-primary-900/70">
-              Experiencia + enfoque de negocio
+              {t.team.badgeB}
             </span>
           </div>
 
           <h2 className="mt-6 h-title text-3xl sm:text-4xl text-primary-900">
-            Personas reales, estrategia real
+            {t.team.title}
           </h2>
 
           <p className="mt-4 t-body text-primary-900/75 text-[16px] leading-relaxed">
-            Conoce a quienes te acompañan en cada etapa: desde estructurar tu empresa
-            hasta defenderla cuando importa.
+            {t.team.desc}
           </p>
         </div>
 
@@ -76,7 +77,7 @@ export default function Team() {
                 key={person.id}
                 className={[
                   "group relative rounded-3xl overflow-hidden",
-                  "border border-primary-900/10 bg-white",
+                  "border border-primary-900/10 bg-secondary-50",
                   "shadow-[0_10px_28px_rgba(0,0,0,0.05)]",
                 ].join(" ")}
               >
@@ -112,7 +113,7 @@ export default function Team() {
                         ].join(" ")}
                         title={isOpen ? "Cerrar" : "Ver bio"}
                       >
-                        <ArrowUpRight size={18} />
+                        <ArrowUpRight size={18} className="text-white"/>
                       </div>
                     </div>
                   </div>

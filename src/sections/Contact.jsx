@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { Phone, Mail, MapPin, Send, CheckCircle, AlertTriangle } from "lucide-react";
+import useLanguage from "../hooks/useLanguage";
 
 export default function Contact() {
-  // Cambia esto por los datos reales
-  const PHONE_DISPLAY = "+52 166 320 44384";
-  const PHONE_TEL = "+5216632044384";
+  const { t } = useLanguage();
+  
+  const PHONE_DISPLAY = "+52 663 204 4384";
+  const PHONE_TEL = "+526632044384";
   const EMAIL = "contacto@jman.com";
 
   const [form, setForm] = useState({
@@ -22,12 +24,12 @@ export default function Contact() {
   };
 
   const validate = () => {
-    if (!form.name.trim()) return "Escribe tu nombre.";
-    if (!form.email.trim()) return "Escribe tu correo.";
+    if (!form.name.trim()) return t.contacto.errorNombre;
+    if (!form.email.trim()) return t.contacto.errorEmail;
     // Validación simple de email
-    if (!/^\S+@\S+\.\S+$/.test(form.email)) return "Escribe un correo válido.";
-    if (!form.subject.trim()) return "Escribe un asunto.";
-    if (form.message.trim().length < 12) return "Escribe un mensaje un poco más claro (mínimo 12 caracteres).";
+    if (!/^\S+@\S+\.\S+$/.test(form.email)) return t.contacto.errorEmailInvalid;
+    if (!form.subject.trim()) return t.contacto.errorSubject;
+    if (form.message.trim().length < 12) return t.contacto.errorMessageLen;
     return null;
   };
 
@@ -40,7 +42,7 @@ export default function Contact() {
     }
 
     try {
-      setStatus({ type: "loading", msg: "Enviando..." });
+      setStatus({ type: "loading", msg: t.contacto.sending });
 
       // ✅ Aquí conectas EmailJS o tu endpoint
       // await sendEmail(form)
@@ -48,10 +50,10 @@ export default function Contact() {
       // Simulación de envío
       await new Promise((r) => setTimeout(r, 700));
 
-      setStatus({ type: "success", msg: "Listo. Te contactaremos en breve." });
+      setStatus({ type: "success", msg: t.contacto.success });
       setForm({ name: "", email: "", subject: "", message: "" });
     } catch (error) {
-      setStatus({ type: "error", msg: "No se pudo enviar. Intenta de nuevo o contáctanos por teléfono." });
+      setStatus({ type: "error", msg: t.contacto.error });
     }
   };
 
@@ -61,18 +63,17 @@ export default function Contact() {
         {/* Header */}
         <div className="max-w-3xl">
           <div className="inline-flex items-center gap-2 rounded-full border border-primary-900/10 bg-secondary-50 px-4 py-2 sm:py-1.5 shadow-[0_6px_16px_rgba(0,0,0,0.06)]">
-            <span className="t-body text-[12px] text-primary-900/80">Contacto</span>
+            <span className="t-body text-[12px] text-primary-900/80">{t.contacto.badgeA}</span>
             <span className="hidden sm:inline h-1 w-1 rounded-full bg-accent-500" />
-            <span className="t-body text-[12px] text-primary-900/70">Agenda una consulta</span>
+            <span className="t-body text-[12px] text-primary-900/70">{t.contacto.badgeB}</span>
           </div>
 
           <h2 className="mt-6 h-title text-3xl sm:text-4xl text-primary-900">
-            Cuéntanos tu caso. Te respondemos con claridad.
+            {t.contacto.title}
           </h2>
 
           <p className="mt-4 t-body text-primary-900/75 text-[16px] leading-relaxed">
-            Si estás emprendiendo, escalando o enfrentando un conflicto, podemos ayudarte a tomar una decisión con
-            estructura y respaldo legal.
+            {t.contacto.desc}
           </p>
         </div>
 
@@ -81,57 +82,57 @@ export default function Contact() {
           <div className="lg:col-span-7">
             <form
               onSubmit={onSubmit}
-              className="rounded-3xl border border-primary-900/10 bg-white p-6 sm:p-8 shadow-[0_10px_28px_rgba(0,0,0,0.05)]"
+              className="rounded-3xl border border-primary-900/10 bg-secondary-50 p-6 sm:p-8 shadow-[0_10px_28px_rgba(0,0,0,0.05)]"
             >
               <div className="grid sm:grid-cols-2 gap-4">
-                <Field label="Nombre" required>
+                <Field label={t.contacto.labelName} required>
                   <input
                     name="name"
                     value={form.name}
                     onChange={onChange}
-                    className="w-full rounded-xl border border-primary-900/15 bg-secondary-50 px-4 py-3 t-body text-[14px]
+                    className="w-full rounded-xl border border-primary-900/15 bg-secondary-100 px-4 py-3 t-body text-[14px]
                                text-primary-900 placeholder:text-primary-900/40 focus-ring"
-                    placeholder="Tu nombre"
+                    placeholder={t.contacto.placeholderName}
                     autoComplete="name"
                   />
                 </Field>
 
-                <Field label="Correo" required>
+                <Field label={t.contacto.labelEmail} required>
                   <input
                     name="email"
                     value={form.email}
                     onChange={onChange}
-                    className="w-full rounded-xl border border-primary-900/15 bg-secondary-50 px-4 py-3 t-body text-[14px]
+                    className="w-full rounded-xl border border-primary-900/15 bg-secondary-100 px-4 py-3 t-body text-[14px]
                                text-primary-900 placeholder:text-primary-900/40 focus-ring"
-                    placeholder="tu@email.com"
+                    placeholder={t.contacto.placeholderEmail}
                     autoComplete="email"
                   />
                 </Field>
               </div>
 
               <div className="mt-4">
-                <Field label="Asunto" required>
+                <Field label={t.contacto.labelSubject} required>
                   <input
                     name="subject"
                     value={form.subject}
                     onChange={onChange}
-                    className="w-full rounded-xl border border-primary-900/15 bg-secondary-50 px-4 py-3 t-body text-[14px]
+                    className="w-full rounded-xl border border-primary-900/15 bg-secondary-100 px-4 py-3 t-body text-[14px]
                                text-primary-900 placeholder:text-primary-900/40 focus-ring"
-                    placeholder="Ej. Contrato / Marca / Conflicto con socio"
+                    placeholder={t.contacto.placeholderSubject}
                   />
                 </Field>
               </div>
 
               <div className="mt-4">
-                <Field label="Mensaje" required>
+                <Field label={t.contacto.labelMessage} required>
                   <textarea
                     name="message"
                     value={form.message}
                     onChange={onChange}
                     rows={5}
-                    className="w-full rounded-xl border border-primary-900/15 bg-secondary-50 px-4 py-3 t-body text-[14px]
+                    className="w-full rounded-xl border border-primary-900/15 bg-secondary-100 px-4 py-3 t-body text-[14px]
                                text-primary-900 placeholder:text-primary-900/40 focus-ring resize-y"
-                    placeholder="Describe brevemente tu situación y qué necesitas."
+                    placeholder={t.contacto.placeholderMessage}
                   />
                 </Field>
               </div>
@@ -169,22 +170,22 @@ export default function Contact() {
                              disabled:opacity-60 disabled:cursor-not-allowed"
                 >
                   <Send size={18} />
-                  {status.type === "loading" ? "Enviando..." : "Enviar mensaje"}
+                  {status.type === "loading" ? t.contacto.sending : t.contacto.cta}
                 </button>
 
                 <a
                   href={`tel:${PHONE_TEL}`}
                   className="inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3 t-body text-[15px] font-semibold
-                             border border-primary-900/15 bg-secondary-50 hover:bg-secondary-100 transition
+                             border border-primary-900/15 bg-secondary-100 hover:bg-secondary-200 transition
                              shadow-[0_6px_16px_rgba(0,0,0,0.06)] focus-ring"
                 >
                   <Phone size={18} />
-                  Llamar
+                  {t.contacto.call}
                 </a>
               </div>
 
               <div className="mt-4 t-body text-[12px] text-primary-900/60">
-                Al enviar, aceptas que te contactemos para dar seguimiento a tu solicitud.
+                {t.contacto.disclaimer}
               </div>
             </form>
           </div>
@@ -193,33 +194,33 @@ export default function Contact() {
           <div className="lg:col-span-5">
             <div className="rounded-3xl border border-primary-900/10 bg-secondary-50 p-6 sm:p-8 shadow-[0_10px_28px_rgba(0,0,0,0.05)]">
               <h3 className="h-title text-primary-900 text-[22px]">
-                Información directa
+                {t.contacto.infoTitle}
               </h3>
 
               <p className="mt-3 t-body text-[14px] text-primary-900/75 leading-relaxed">
-                Si prefieres, contáctanos por teléfono o correo. Respondemos lo antes posible.
+                {t.contacto.infoDesc}
               </p>
 
               <div className="mt-6 space-y-3">
                 <InfoRow
                   icon={<Phone size={18} className="text-primary-800" />}
-                  label="Teléfono"
+                  label={t.contacto.phone}
                   value={PHONE_DISPLAY}
                   href={`tel:${PHONE_TEL}`}
                 />
                 <InfoRow
                   icon={<Mail size={18} className="text-primary-800" />}
-                  label="Correo"
+                  label={t.contacto.email}
                   value={EMAIL}
                   href={`mailto:${EMAIL}`}
                 />
 
                 {/* Opcional: ubicación si luego la quieres */}
-                <div className="rounded-2xl border border-primary-900/10 bg-white p-4">
+                <div className="rounded-2xl border border-primary-900/10 bg-secondary-100 p-4">
                   <div className="flex items-start gap-3">
                     <div className="mt-0.5">{<MapPin size={18} className="text-primary-800" />}</div>
                     <div>
-                      <div className="t-body text-[12px] text-primary-900/60">Ubicación</div>
+                      <div className="t-body text-[12px] text-primary-900/60">{t.contacto.location}</div>
                       <div className="t-body text-[14px] text-primary-900/80">
                         Tijuana, Baja California
                       </div>
@@ -228,13 +229,13 @@ export default function Contact() {
                 </div>
               </div>
 
-              <div className="mt-6 rounded-2xl border border-primary-900/10 bg-white p-5">
-                <div className="t-body text-[12px] text-primary-900/60">Sugerencia</div>
+              <div className="mt-6 rounded-2xl border border-primary-900/10 bg-secondary-100 p-5">
+                <div className="t-body text-[12px] text-primary-900/60">{t.contacto.suggestion}</div>
                 <div className="mt-1 t-body text-[14px] text-primary-900/80">
-                  Para agilizar: indica si es <span className="font-semibold">marca</span>,{" "}
-                  <span className="font-semibold">contrato</span>,{" "}
-                  <span className="font-semibold">corporativo</span> o{" "}
-                  <span className="font-semibold">litigio</span>, y una breve fecha/límite si existe.
+                  {t.contacto.suggestionA}<span className="font-semibold">{t.contacto.suggestionB}</span>,{" "}
+                  <span className="font-semibold">{t.contacto.suggestionC}</span>,{" "}
+                  <span className="font-semibold">{t.contacto.suggestionD}</span> {t.contacto.suggestionSeparator}{" "}
+                  <span className="font-semibold">{t.contacto.suggestionE}</span>,{t.contacto.suggestionF}
                 </div>
               </div>
             </div>
@@ -260,7 +261,7 @@ function InfoRow({ icon, label, value, href }) {
   return (
     <a
       href={href}
-      className="block rounded-2xl border border-primary-900/10 bg-white p-4 hover:bg-secondary-100 transition"
+      className="block rounded-2xl border border-primary-900/10 bg-secondary-100 p-4 hover:bg-secondary-200 transition"
     >
       <div className="flex items-start gap-3">
         <div className="mt-0.5">{icon}</div>
