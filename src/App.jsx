@@ -1,6 +1,7 @@
 import Navbar from "./sections/Navbar.jsx";
 import Hero from "./sections/Hero.jsx";
 import Services from "./sections/Services.jsx";
+import Aliados from "./sections/Aliados.jsx";
 import TestimonialsLogos from "./sections/TestimonialsLogos.jsx";
 import About from "./sections/About.jsx";
 import Team from "./sections/Team.jsx";
@@ -14,6 +15,7 @@ function App() {
       <Navbar />
       <Hero />
       <Services />
+      <Aliados />
       <TestimonialsLogos />
       <About />
       <Team />

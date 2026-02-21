@@ -113,6 +113,50 @@ export const translations = {
         "Nos aseguramos de que todo esté jurídicamente blindado antes de firmar.",
       cta: "Solicitar asesoría estratégica",
     },
+    aliados: {
+      badgeA: "Programa comercial",
+      badgeB: "Aliados que suman",
+      titleA: "Programa de Referidos:",
+      titleB: "Aliados que Suman",
+      desc: "Si trabajas con emprendedores, empresas o comunidades de negocio, puedes generar ingresos recomendando servicios jurídicos estratégicos. Simple: refieres, el cliente contrata, y recibes una comisión con reglas claras.",
+      bullets: [
+        "Comisión del 10% al 15% sobre honorarios netos (según el servicio).",
+        "Trazabilidad interna del referido para transparencia.",
+        "Sin relación laboral: es un programa de colaboración comercial.",
+        "El despacho puede modificar el programa, respetando referidos ya registrados.",
+      ],
+      ideal: "Ideal para:",
+      idealDesc:
+        "Contadores, brokers, agencias, consultores, cámaras empresariales, gestores, community builders y aliados comerciales.",
+      comision: "Comisión estimada",
+      comisionDesc:
+        "Aplicable sobre honorarios netos. No aplica sobre impuestos, gastos, derechos o pagos a terceros.",
+      cta: "Quiero ser aliado",
+      terms: "Ver términos",
+      note: "Nota: Este programa no crea relación laboral. Es una colaboración comercial independiente.",
+      how: "¿Cómo funciona?",
+      howHighlight: "Proceso claro en 4 pasos",
+
+      stepstitleA: "Registro del aliado",
+      stepsdescA:
+        "Te registras y te explicamos el proceso. Sin letras chiquitas escondidas.",
+
+      stepstitleB: "Referido validado",
+      stepsdescB:
+        "El prospecto se registra como referido antes de su primer contacto con el despacho.",
+
+      stepstitleC: "Contratación y pago",
+      stepsdescC:
+        "La comisión aplica cuando el cliente contrata y paga honorarios profesionales.",
+
+      stepstitleD: "Pago de comisión",
+      stepsdescD:
+        "Se paga en un plazo máximo de 10 días hábiles posteriores a la confirmación del pago.",
+
+      printTitle: "Transparencia y registro",
+      printDesc:
+        "Cada referido se registra internamente para asegurar trazabilidad. La comisión se paga después de la confirmación del pago del cliente, en un máximo de 10 días hábiles.",
+    },
     testimonials: {
       title: "Empresas que han confiado en JM & AN",
       subtitle:
@@ -384,6 +428,57 @@ export const translations = {
       closingE: "We ensure everything is legally safeguarded before signing.",
 
       cta: "Request strategic counsel",
+    },
+    aliados: {
+      badgeA: "Commercial Program",
+      badgeB: "Allies Who Add Value",
+
+      titleA: "Referral Program:",
+      titleB: "Allies Who Add Value",
+
+      desc: "If you work with entrepreneurs, companies, or business communities, you can generate income by recommending strategic legal services. Simple: you refer, the client hires, and you receive a commission under clear rules.",
+
+      bullets: [
+        "Commission of 10% to 15% on net professional fees (depending on the service).",
+        "Internal tracking of referrals to ensure transparency.",
+        "No employment relationship: this is a commercial collaboration program.",
+        "The firm may modify the program, respecting previously registered referrals.",
+      ],
+
+      ideal: "Ideal for:",
+      idealDesc:
+        "Accountants, brokers, agencies, consultants, business chambers, advisors, community builders, and commercial partners.",
+
+      comision: "Estimated Commission",
+      comisionDesc:
+        "Applicable to net professional fees. Does not apply to taxes, expenses, official fees, or third-party payments.",
+
+      cta: "Become an Ally",
+      terms: "View Terms",
+      note: "Note: This program does not create an employment relationship. It is an independent commercial collaboration.",
+
+      how: "How does it work?",
+      howHighlight: "Clear process in 4 steps",
+
+      stepstitleA: "Ally Registration",
+      stepsdescA:
+        "You register and we explain the process. No hidden fine print.",
+
+      stepstitleB: "Validated Referral",
+      stepsdescB:
+        "The prospect is registered as a referral before their first contact with the firm.",
+
+      stepstitleC: "Hiring and Payment",
+      stepsdescC:
+        "The commission applies once the client hires and pays the professional fees.",
+
+      stepstitleD: "Commission Payment",
+      stepsdescD:
+        "Payment is made within a maximum of 10 business days after confirmation of the client’s payment.",
+
+      printTitle: "Transparency and Record-Keeping",
+      printDesc:
+        "Each referral is internally recorded to ensure traceability. The commission is paid after confirmation of the client’s payment, within a maximum of 10 business days.",
     },
     testimonials: {
       title: "Companies that have trusted JM & AN",
