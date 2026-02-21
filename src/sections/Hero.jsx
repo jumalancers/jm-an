@@ -70,7 +70,7 @@ export default function Hero() {
             <h1 className="mt-6 sm:mt-7 h-title text-primary-900 text-[34px] leading-[1.08] sm:text-5xl sm:leading-[1.05]">
               Crece con{" "}
               <span className="text-accent-600 text-important">
-                estructura legal
+                estructura legal <br />
               </span>{" "}
               y respalda cada decisión.
             </h1>
@@ -95,7 +95,7 @@ export default function Hero() {
               </a>
 
               <a
-                href="tel:+520000000000"
+                href="tel:+5216632044384"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3 t-body text-[15px] font-semibold
                            border border-primary-900/15 bg-secondary-50
                            hover:bg-secondary-100 transition

@@ -11,9 +11,9 @@ export default function Services() {
   const services = [
     {
       icon: Scale,
+      id: "litigio",
       title: "Litigio Civil, Mercantil y Administrativo",
-      intro:
-        "Cuando hay que defender, defendemos con estrategia.",
+      intro: "Cuando hay que defender, defendemos con estrategia.",
       points: [
         "Juicios civiles y mercantiles",
         "Recuperación de cartera",
@@ -26,9 +26,9 @@ export default function Services() {
     },
     {
       icon: Building2,
+      id: "corporativo",
       title: "Derecho Corporativo",
-      intro:
-        "Tu empresa debe estar bien estructurada antes de crecer.",
+      intro: "Tu empresa debe estar bien estructurada antes de crecer.",
       points: [
         "Constitución de sociedades",
         "Fusiones y escisiones",
@@ -37,14 +37,13 @@ export default function Services() {
         "Actas de asamblea",
         "Cumplimiento normativo",
       ],
-      closing:
-        "Un negocio mal estructurado es un riesgo innecesario.",
+      closing: "Un negocio mal estructurado es un riesgo innecesario.",
     },
     {
       icon: BadgeCheck,
+      id:"propiedad",
       title: "Propiedad Intelectual",
-      intro:
-        "Tu marca es tu activo más valioso. Protégelo.",
+      intro: "Tu marca es tu activo más valioso. Protégelo.",
       points: [
         "Registro de marcas ante IMPI",
         "Contestación de impedimentos",
@@ -52,14 +51,13 @@ export default function Services() {
         "Defensa administrativa",
         "Estrategias de protección de branding",
       ],
-      closing:
-        "Sin protección, tu marca está expuesta.",
+      closing: "Sin protección, tu marca está expuesta.",
     },
     {
       icon: FileSignature,
+      id:"contractual",
       title: "Derecho Contractual",
-      intro:
-        "Un buen contrato evita un mal juicio.",
+      intro: "Un buen contrato evita un mal juicio.",
       points: [
         "Contratos civiles y mercantiles",
         "Contratos de prestación de servicios",
@@ -67,14 +65,13 @@ export default function Services() {
         "Licencias de marca",
         "Contratos societarios y comerciales",
       ],
-      closing:
-        "Cada cláusula importa. Cada palabra protege.",
+      closing: "Cada cláusula importa. Cada palabra protege.",
     },
     {
       icon: Landmark,
+      id:"notarial",
       title: "Gestión Notarial",
-      intro:
-        "Formalidad y certeza legal en cada operación.",
+      intro: "Formalidad y certeza legal en cada operación.",
       points: [
         "Testamentos",
         "Compraventas",
@@ -90,7 +87,6 @@ export default function Services() {
   return (
     <section id="servicios" className="py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        
         {/* Header */}
         <div className="max-w-3xl">
           <h2 className="h-title text-3xl sm:text-4xl text-primary-900">
@@ -98,9 +94,9 @@ export default function Services() {
           </h2>
 
           <p className="mt-4 t-body text-primary-900/75 text-[16px]">
-            En JM & AN no solo resolvemos problemas legales.
-            Diseñamos estrategias para que tu negocio crezca con seguridad,
-            estructura y protección.
+            En JM & AN no solo resolvemos problemas legales. Diseñamos
+            estrategias para que tu negocio crezca con seguridad, estructura y
+            protección.
           </p>
         </div>
 
@@ -111,6 +107,7 @@ export default function Services() {
 
             return (
               <div
+                id={service.id}
                 key={service.title}
                 className="rounded-3xl bg-white border border-primary-900/10 p-8
                            shadow-[0_12px_30px_rgba(0,0,0,0.05)]

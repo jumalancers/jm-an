@@ -168,7 +168,7 @@ export default function Navbar() {
               </a>
 
               <a
-                href="#contacto"
+                href="#consulta"
                 className="text-primary-900 hover:text-primary-900 transition-colors t-body font-semibold"
               >
                 Contacto
@@ -290,7 +290,7 @@ export default function Navbar() {
               </a>
 
               <a
-                href="#contacto"
+                href="#consulta"
                 className="block px-3 py-2 rounded-xl font-semibold text-primary-900 hover:bg-secondary-200/60"
               >
                 Contacto
