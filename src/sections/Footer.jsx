@@ -116,10 +116,10 @@ export default function Footer() {
               <li className="flex items-center gap-2">
                 <Mail size={16} className="text-accent-400" />
                 <a
-                  href="mailto:contacto@jman.com"
+                  href="mailto:contacto@jmyanabogados.com"
                   className="hover:text-accent-400 transition"
                 >
-                  contacto@jman.com
+                  contacto@jmyanabogados.com
                 </a>
               </li>
             </ul>

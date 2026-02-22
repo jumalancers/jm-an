@@ -1,13 +1,21 @@
 import { useState } from "react";
-import { Phone, Mail, MapPin, Send, CheckCircle, AlertTriangle } from "lucide-react";
+import {
+  Phone,
+  Mail,
+  MapPin,
+  Send,
+  CheckCircle,
+  AlertTriangle,
+} from "lucide-react";
 import useLanguage from "../hooks/useLanguage";
+import emailjs from "@emailjs/browser";
 
 export default function Contact() {
   const { t } = useLanguage();
-  
+
   const PHONE_DISPLAY = "+52 663 204 4384";
   const PHONE_TEL = "+526632044384";
-  const EMAIL = "contacto@jman.com";
+  const EMAIL = "contacto@jmyanabogados.com";
 
   const [form, setForm] = useState({
     name: "",
@@ -44,15 +52,22 @@ export default function Contact() {
     try {
       setStatus({ type: "loading", msg: t.contacto.sending });
 
-      // ✅ Aquí conectas EmailJS o tu endpoint
-      // await sendEmail(form)
-
-      // Simulación de envío
-      await new Promise((r) => setTimeout(r, 700));
+      await emailjs.send(
+        "service_3akvftf",
+        "template_omqe6id",
+        {
+          name: form.name,
+          email: form.email,
+          subject: form.subject,
+          message: form.message,
+        },
+        "mTC8Hfrh8E4b07bNM",
+      );
 
       setStatus({ type: "success", msg: t.contacto.success });
       setForm({ name: "", email: "", subject: "", message: "" });
     } catch (error) {
+      console.log("Error sending email:", error);
       setStatus({ type: "error", msg: t.contacto.error });
     }
   };
@@ -63,9 +78,13 @@ export default function Contact() {
         {/* Header */}
         <div className="max-w-3xl">
           <div className="inline-flex items-center gap-2 rounded-full border border-primary-900/10 bg-secondary-50 px-4 py-2 sm:py-1.5 shadow-[0_6px_16px_rgba(0,0,0,0.06)]">
-            <span className="t-body text-[12px] text-primary-900/80">{t.contacto.badgeA}</span>
+            <span className="t-body text-[12px] text-primary-900/80">
+              {t.contacto.badgeA}
+            </span>
             <span className="hidden sm:inline h-1 w-1 rounded-full bg-accent-500" />
-            <span className="t-body text-[12px] text-primary-900/70">{t.contacto.badgeB}</span>
+            <span className="t-body text-[12px] text-primary-900/70">
+              {t.contacto.badgeB}
+            </span>
           </div>
 
           <h2 className="mt-6 h-title text-3xl sm:text-4xl text-primary-900">
@@ -145,8 +164,8 @@ export default function Contact() {
                     status.type === "success"
                       ? "border-success-200 bg-success-50 text-success-800"
                       : status.type === "error"
-                      ? "border-danger-200 bg-danger-50 text-danger-800"
-                      : "border-info-200 bg-info-50 text-info-800",
+                        ? "border-danger-200 bg-danger-50 text-danger-800"
+                        : "border-info-200 bg-info-50 text-info-800",
                   ].join(" ")}
                 >
                   {status.type === "success" ? (
@@ -170,7 +189,9 @@ export default function Contact() {
                              disabled:opacity-60 disabled:cursor-not-allowed"
                 >
                   <Send size={18} />
-                  {status.type === "loading" ? t.contacto.sending : t.contacto.cta}
+                  {status.type === "loading"
+                    ? t.contacto.sending
+                    : t.contacto.cta}
                 </button>
 
                 <a
@@ -218,9 +239,13 @@ export default function Contact() {
                 {/* Opcional: ubicación si luego la quieres */}
                 <div className="rounded-2xl border border-primary-900/10 bg-secondary-100 p-4">
                   <div className="flex items-start gap-3">
-                    <div className="mt-0.5">{<MapPin size={18} className="text-primary-800" />}</div>
+                    <div className="mt-0.5">
+                      {<MapPin size={18} className="text-primary-800" />}
+                    </div>
                     <div>
-                      <div className="t-body text-[12px] text-primary-900/60">{t.contacto.location}</div>
+                      <div className="t-body text-[12px] text-primary-900/60">
+                        {t.contacto.location}
+                      </div>
                       <div className="t-body text-[14px] text-primary-900/80">
                         Tijuana, Baja California
                       </div>
@@ -230,12 +255,27 @@ export default function Contact() {
               </div>
 
               <div className="mt-6 rounded-2xl border border-primary-900/10 bg-secondary-100 p-5">
-                <div className="t-body text-[12px] text-primary-900/60">{t.contacto.suggestion}</div>
+                <div className="t-body text-[12px] text-primary-900/60">
+                  {t.contacto.suggestion}
+                </div>
                 <div className="mt-1 t-body text-[14px] text-primary-900/80">
-                  {t.contacto.suggestionA}<span className="font-semibold">{t.contacto.suggestionB}</span>,{" "}
-                  <span className="font-semibold">{t.contacto.suggestionC}</span>,{" "}
-                  <span className="font-semibold">{t.contacto.suggestionD}</span> {t.contacto.suggestionSeparator}{" "}
-                  <span className="font-semibold">{t.contacto.suggestionE}</span>,{t.contacto.suggestionF}
+                  {t.contacto.suggestionA}
+                  <span className="font-semibold">
+                    {t.contacto.suggestionB}
+                  </span>
+                  ,{" "}
+                  <span className="font-semibold">
+                    {t.contacto.suggestionC}
+                  </span>
+                  ,{" "}
+                  <span className="font-semibold">
+                    {t.contacto.suggestionD}
+                  </span>{" "}
+                  {t.contacto.suggestionSeparator}{" "}
+                  <span className="font-semibold">
+                    {t.contacto.suggestionE}
+                  </span>
+                  ,{t.contacto.suggestionF}
                 </div>
               </div>
             </div>

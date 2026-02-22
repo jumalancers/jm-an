@@ -204,21 +204,19 @@ export const translations = {
       title: "Personas reales, estrategia real",
       desc: "Conoce a quienes te acompañan en cada etapa: desde estructurar tu empresa hasta defenderla cuando importa.",
 
-      nameA: "Julián Isaí Moya Gil",
-      titleA: "Socio fundador | Litigio y Estrategia",
-      bioA: "Enfoque en litigio civil, mercantil y administrativo con visión estratégica. Acompaña a empresas en escenarios de conflicto, recuperación y defensa, priorizando evidencia, táctica y estructura.",
+      nameA: "Julian Isai Moya Gil",
+      titleA:
+        "Socio fundador | Egresado de la Universidad Autónoma de Baja California (UABC)",
+      bioA: "Su práctica se centra en la protección estratégica de activos empresariales, estructuración corporativa y defensa administrativa, brindando soluciones legales preventivas con enfoque claro y orientado al fortalecimiento del negocio.",
 
       nameB: "Ángel Alberto Nieves Manzo",
-      titleB: "Socio fundador | Corporativo y Contratos",
-      bioB: "Especializado en estructuración corporativa y documentación legal para empresas en crecimiento. Trabaja con constitución, poderes, actas y contratos para reducir riesgo y dar certeza a cada decisión.",
+      titleB:
+        "Socio fundador | Egresado de la Universidad Autónoma de Baja California (UABC)",
+      bioB: "Cuenta con preparación especializada en materia penal, civil y mercantil, participando en el análisis jurídico de controversias y en el diseño de estrategias procesales, con un enfoque técnico y estructurado en la resolución de conflictos.",
 
-      nameC: "Asociado(a) Legal",
+      nameC: "Asociados Legales",
       titleC: "Propiedad Intelectual",
-      bioC: "Apoya el registro, seguimiento y defensa de marcas. Integra estrategias de protección para branding y activos intangibles, alineando lo legal con la expansión comercial.",
-
-      nameD: "Asociado(a) Legal",
-      titleD: "Gestión Notarial y Documental",
-      bioD: "Coordina procesos notariales y regularización documental. Acompaña operaciones que requieren formalidad, revisando requisitos y cuidando que todo quede jurídicamente blindado antes de firmar.",
+      bioC: "Asesoran en el registro, seguimiento y defensa de marcas, diseñando estrategias integrales de protección para activos intangibles. Integran la dimensión legal con la visión comercial, fortaleciendo el posicionamiento y expansión de cada proyecto.",
     },
     valores: {
       badgeA: "Valores",
@@ -531,28 +529,24 @@ export const translations = {
       cta: "Schedule consultation",
     },
     team: {
-      badgeA: "Our Team",
-      badgeB: "Experience + Business Perspective",
+      badgeA: "The Team",
+      badgeB: "Experience + Business Focus",
+      title: "Real People, Real Strategy",
+      desc: "Meet the professionals who support you at every stage — from structuring your company to defending it when it matters most.",
 
-      title: "Real people, real strategy",
-
-      desc: "Meet the professionals who guide you at every stage—from structuring your company to defending it when it matters most.",
-
-      nameA: "Julián Isaí Moya Gil",
-      titleA: "Founding Partner | Litigation & Strategy",
-      bioA: "Focused on civil, commercial, and administrative litigation with a strategic approach. Advises businesses in conflict scenarios, recovery actions, and legal defense, prioritizing evidence, tactical planning, and structural clarity.",
+      nameA: "Julian Isai Moya Gil",
+      titleA:
+        "Founding Partner | Graduate of the Autonomous University of Baja California (UABC)",
+      bioA: "His practice focuses on the strategic protection of business assets, corporate structuring, and administrative defense, delivering preventive legal solutions with a clear, business-oriented approach.",
 
       nameB: "Ángel Alberto Nieves Manzo",
-      titleB: "Founding Partner | Corporate & Contracts",
-      bioB: "Specialized in corporate structuring and legal documentation for growing businesses. Works on company formation, powers of attorney, corporate records, and contracts to reduce risk and provide legal certainty in every decision.",
+      titleB:
+        "Founding Partner | Graduate of the Autonomous University of Baja California (UABC)",
+      bioB: "He has specialized training in criminal, civil, and commercial law, contributing to the legal analysis of disputes and the development of procedural strategies with a structured and technical approach to conflict resolution.",
 
-      nameC: "Legal Associate",
+      nameC: "Legal Associates",
       titleC: "Intellectual Property",
-      bioC: "Supports trademark registration, monitoring, and defense. Develops brand protection strategies and safeguards intangible assets, aligning legal structure with commercial expansion.",
-
-      nameD: "Legal Associate",
-      titleD: "Notarial & Document Management",
-      bioD: "Coordinates notarial processes and document regularization. Assists in operations requiring formal execution, reviewing requirements and ensuring everything is legally secured before signing.",
+      bioC: "They advise on the registration, monitoring, and defense of trademarks, designing comprehensive protection strategies for intangible assets. They integrate legal expertise with commercial vision, strengthening the positioning and expansion of each project.",
     },
     valores: {
       badgeA: "Values",

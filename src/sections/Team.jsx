@@ -13,7 +13,7 @@ export default function Team() {
       title: t.team.titleA,
       bio: t.team.bioA,
       photo:
-        "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1200&auto=format&fit=crop",
+        "/fotos/Julian.jpg",
     },
     {
       id: "angel",
@@ -21,7 +21,7 @@ export default function Team() {
       title: t.team.titleB,
       bio: t.team.bioB,
       photo:
-        "https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=1200&auto=format&fit=crop",
+        "/fotos/Angel.jpg",
     },
     {
       id: "asociado1",
@@ -29,16 +29,8 @@ export default function Team() {
       title: t.team.titleC,
       bio: t.team.bioC,
       photo:
-        "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1200&auto=format&fit=crop",
-    },
-    {
-      id: "asociado2",
-      name: t.team.nameD,
-      title: t.team.titleD,
-      bio: t.team.bioD,
-      photo:
-        "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?q=80&w=1200&auto=format&fit=crop",
-    },
+        "/fotos/Ju&An.jpg",
+    }
   ];
 
   const toggle = (id) => setOpenId((prev) => (prev === id ? null : id));
@@ -93,7 +85,7 @@ export default function Team() {
                     <img
                       src={person.photo}
                       alt={person.name}
-                      className="h-130 w-full object-cover"
+                      className="h-110 w-full object-cover"
                       loading="lazy"
                       draggable="false"
                     />
@@ -106,14 +98,14 @@ export default function Team() {
                       <div
                         className={[
                           "h-11 w-11 rounded-3xl grid place-items-center",
-                          "border border-white/20 bg-black/20 backdrop-blur",
-                          "text-secondary-50",
+                          "border border-black/20 bg-black/20 backdrop-blur",
+                          "text-black",
                           "transition",
                           isOpen ? "rotate-90" : "group-hover:rotate-12",
                         ].join(" ")}
                         title={isOpen ? "Cerrar" : "Ver bio"}
                       >
-                        <ArrowUpRight size={18} className="text-white"/>
+                        <ArrowUpRight size={18} className="text-black"/>
                       </div>
                     </div>
                   </div>
@@ -140,8 +132,8 @@ export default function Team() {
                         </div>
 
                         <div className="shrink-0">
-                          <div className="h-9 w-9 rounded-xl border border-primary-900/10 bg-white grid place-items-center text-primary-900/70">
-                            <X size={16} />
+                          <div className="h-9 w-9 rounded-xl border border-black/10 bg-white grid place-items-center text-black/70">
+                            <X size={18} />
                           </div>
                         </div>
                       </div>
