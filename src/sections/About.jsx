@@ -57,7 +57,8 @@ export default function About() {
           </h2>
 
           <p className="mt-4 t-body text-primary-900/75 text-[16px] leading-relaxed">
-            {t.about.desc}
+            {t.about.desc1}&reg;
+            {t.about.desc2}
           </p>
         </div>
 

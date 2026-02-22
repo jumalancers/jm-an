@@ -64,7 +64,8 @@ export default function Services() {
           </h2>
 
           <p className="mt-4 t-body text-primary-900/75 text-[16px]">
-            {t.services.desc}
+            {t.services.desc1}&reg;
+            {t.services.desc2}
           </p>
         </div>
 

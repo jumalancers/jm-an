@@ -79,7 +79,7 @@ export default function TestimonialsLogos() {
         {/* Header */}
         <div className="max-w-3xl">
           <h2 className="h-title text-3xl sm:text-4xl text-primary-900">
-            {t.testimonials.title}
+            {t.testimonials.title}&reg;
           </h2>
           <p className="mt-4 t-body text-primary-900/75 text-[16px]">
             {t.testimonials.subtitle}

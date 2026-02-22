@@ -3,7 +3,7 @@ export const translations = {
     nav: {
       home: "Inicio",
       areas: "Áreas",
-      about: "Sobre el despacho",
+      about: "Sobre nosotros",
       contact: "Contacto",
       schedule: "Agendar consulta",
       light: "Modo claro",
@@ -57,12 +57,14 @@ export const translations = {
     },
     services: {
       title: "Servicios legales para proteger y hacer crecer tu negocio",
-      desc: "En JM & AN no solo resolvemos problemas legales. Diseñamos estrategias para que tu negocio crezca con seguridad, estructura y protección.",
+      desc1: "En JM & AN",
+      desc2:
+        " no solo resolvemos problemas legales. Diseñamos estrategias para que tu negocio crezca con seguridad, estructura y protección.",
       titleA: "Litigio Civil, Mercantil y Administrativo",
       introA: "Cuando hay que defender, defendemos con estrategia.",
       pointsA: [
         "Juicios civiles y mercantiles",
-        "Recuperación de cartera",
+        "Juicios Sucesorios",
         "Conflictos entre socios",
         "Defensa contra actos administrativos",
         "Estrategia procesal integral",
@@ -81,25 +83,27 @@ export const translations = {
       ],
       closingB: "Un negocio mal estructurado es un riesgo innecesario.",
       titleC: "Propiedad Intelectual",
-      introC: "Tu marca es tu activo más valioso. Protégelo.",
+      introC: "Protege lo que construyes. Defiende lo que te distingue.",
       pointsC: [
-        "Registro de marcas ante IMPI",
-        "Contestación de impedimentos",
-        "Declaraciones de uso y renovaciones",
-        "Defensa administrativa",
-        "Estrategias de protección de branding",
+        "Registro de marcas y otros signos distintivos",
+        "Derechos de autor",
+        "Oposiciones y contestación de impedimentos",
+        "Declaraciones de uso, caducidad y nulidad",
+        "Juicios contra negativas del IMPI",
+        "Procedimientos por infracciones en comercio",
       ],
-      closingC: "Sin protección, tu marca está expuesta.",
+      closingC: "Tu creatividad es un activo. Blindémoslo jurídicamente.",
       titleD: "Derecho Contractual",
-      introD: "Un buen contrato evita un mal juicio.",
+      introD: "Un buen contrato previene riesgos y protege relaciones.",
       pointsD: [
         "Contratos civiles y mercantiles",
-        "Contratos de prestación de servicios",
-        "NDA y confidencialidad",
-        "Licencias de marca",
-        "Contratos societarios y comerciales",
+        "Acuerdos corporativos y societarios",
+        "Contratos de propiedad intelectual y licenciamiento",
+        "Convenios administrativos y regulatorios",
+        "Prestación de servicios, distribución y colaboración",
+        "NDA y esquemas de confidencialidad",
       ],
-      closingD: "Cada cláusula importa. Cada palabra protege.",
+      closingD: "La estrategia jurídica comienza antes de firmar.",
       titleE: "Gestión Notarial",
       introE: "Formalidad y certeza legal en cada operación.",
       pointsE: [
@@ -166,7 +170,9 @@ export const translations = {
       badgeA: "Sobre el despacho",
       badgeB: "Historia, misión y enfoque",
       title: "Asesoría jurídica integral para negocios que están creciendo",
-      desc: "JM & AN nace con una idea simple: que emprender y escalar no implique caminar a ciegas en lo legal. Acompañamos a nuestros clientes a proteger sus activos, consolidar sus empresas y tomar decisiones con seguridad jurídica.",
+      desc1: "JM & AN",
+      desc2:
+        " nace con una idea simple: que emprender y escalar no implique caminar a ciegas en lo legal. Acompañamos a nuestros clientes a proteger sus activos, consolidar sus empresas y tomar decisiones con seguridad jurídica.",
       quoteBadge: "Nuestra misión",
       quoteBadgeDesc:
         "“Proteger y pontenciar a emprendedores y empresas mediante soluciones legales integrales, con un enfoque estratégico en propiedad intelectual y derecho corporativo.”",
@@ -301,7 +307,7 @@ export const translations = {
     nav: {
       home: "Home",
       areas: "Practice Areas",
-      about: "About the Firm",
+      about: "About us",
       contact: "Contact",
       schedule: "Schedule Consultation",
       light: "Light mode",
@@ -366,26 +372,28 @@ export const translations = {
     },
     services: {
       title: "Legal services to protect and grow your business",
-      desc: "At JM & AN, we don’t just solve legal issues. We design strategies that allow your business to grow with security, structure, and protection.",
+      desc1: "At JM & AN",
+      desc2:
+        " we don’t just solve legal problems. We design strategies so your business grows with security, structure, and protection.",
 
       titleA: "Civil, Commercial, and Administrative Litigation",
       introA: "When it’s time to defend, we defend strategically.",
       pointsA: [
-        "Civil and commercial litigation",
-        "Debt recovery",
-        "Shareholder disputes",
-        "Defense against administrative actions",
-        "Comprehensive litigation strategy",
+        "Civil and commercial lawsuits",
+        "Probate proceedings",
+        "Partner disputes",
+        "Defense against administrative acts",
+        "Comprehensive procedural strategy",
       ],
       closingA:
-        "We don’t improvise litigation. We build solid defenses from day one.",
+        "We don’t improvise in litigation. We build solid defenses from day one.",
 
       titleB: "Corporate Law",
       introB: "Your company must be properly structured before it grows.",
       pointsB: [
         "Company formation",
         "Mergers and spin-offs",
-        "Bylaw amendments",
+        "Corporate bylaw amendments",
         "Granting and revocation of powers of attorney",
         "Shareholders’ meeting minutes",
         "Regulatory compliance",
@@ -393,39 +401,41 @@ export const translations = {
       closingB: "A poorly structured business is an unnecessary risk.",
 
       titleC: "Intellectual Property",
-      introC: "Your brand is your most valuable asset. Protect it.",
+      introC: "Protect what you build. Defend what sets you apart.",
       pointsC: [
-        "Trademark registration before IMPI",
-        "Response to office actions",
-        "Use declarations and renewals",
-        "Administrative defense",
-        "Brand protection strategies",
+        "Trademark registration and other distinctive signs",
+        "Copyright protection",
+        "Oppositions and responses to objections",
+        "Declarations of use, cancellation, and nullity",
+        "Appeals against IMPI refusals",
+        "Proceedings for commercial infringements",
       ],
-      closingC: "Without protection, your brand is exposed.",
+      closingC: "Your creativity is an asset. Let’s legally safeguard it.",
 
       titleD: "Contract Law",
-      introD: "A strong contract prevents a costly lawsuit.",
+      introD: "A strong contract prevents risks and protects relationships.",
       pointsD: [
         "Civil and commercial contracts",
-        "Service agreements",
-        "NDAs and confidentiality agreements",
-        "Trademark licensing agreements",
-        "Corporate and commercial agreements",
+        "Corporate and shareholder agreements",
+        "Intellectual property and licensing agreements",
+        "Administrative and regulatory agreements",
+        "Service, distribution, and collaboration agreements",
+        "NDAs and confidentiality structures",
       ],
-      closingD: "Every clause matters. Every word protects.",
+      closingD: "Legal strategy begins before signing.",
 
-      titleE: "Notarial Services",
+      titleE: "Notarial Management",
       introE: "Formality and legal certainty in every transaction.",
       pointsE: [
         "Wills",
         "Purchase and sale agreements",
         "Donations",
-        "Court judgment formalization",
+        "Court ruling formalization",
         "Document regularization",
       ],
-      closingE: "We ensure everything is legally safeguarded before signing.",
+      closingE: "We make sure everything is legally protected before signing.",
 
-      cta: "Request strategic counsel",
+      cta: "Request strategic legal advice",
     },
     aliados: {
       badgeA: "Commercial Program",
@@ -489,7 +499,9 @@ export const translations = {
 
       title: "Comprehensive legal counsel for growing businesses",
 
-      desc: "JM & AN was founded on a simple idea: that launching and scaling a business should not mean navigating legal matters blindly. We guide our clients in protecting their assets, strengthening their companies, and making decisions with legal certainty.",
+      desc1: "JM & AN",
+      desc2:
+        " was founded on a simple idea: that launching and scaling a business should not mean navigating legal matters blindly. We guide our clients in protecting their assets, strengthening their companies, and making decisions with legal certainty.",
 
       quoteBadge: "Our mission",
       quoteBadgeDesc:

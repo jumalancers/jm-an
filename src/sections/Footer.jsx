@@ -150,7 +150,7 @@ export default function Footer() {
 
         {/* Bottom */}
         <div className="mt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-[13px] t-body text-[var(--color-footer-muted)]">
-          <div>© {year} JM & AN. {t.footer.rights}</div>
+          <div>© {year} JM & AN&reg;. {t.footer.rights}</div>
 
           <p className="text-[13px] flex items-center gap-1">
             {t.footer.madeBy}
