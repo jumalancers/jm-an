@@ -225,7 +225,7 @@ export default function Navbar() {
               </a>
             </div>
             <div className="flex items-center justify-center gap-2">
-              <div className="flex items-center justify-center">
+              <div className="flex items-center justify-center lg:hidden">
                 {/* Language (flags) */}
                 <button
                   type="button"
