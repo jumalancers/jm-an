@@ -224,15 +224,41 @@ export default function Navbar() {
                 {t.nav.schedule}
               </a>
             </div>
+            <div className="flex items-center justify-center gap-2">
+              <div className="flex items-center justify-center">
+                {/* Language (flags) */}
+                <button
+                  type="button"
+                  onClick={toggleLang}
+                  className="inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2 hover:bg-secondary-100 font-semibold transition"
+                  aria-label={lang === "es" ? t.nav.langToEN : t.nav.langToES}
+                >
+                  {lang === "es" ? (
+                    <span className="fi fi-us"></span>
+                  ) : (
+                    <span className="fi fi-mx"></span>
+                  )}
+                </button>
 
-            {/* MOBILE BUTTON */}
-            <button
-              onClick={() => setMobileOpen((v) => !v)}
-              className="lg:hidden inline-flex items-center justify-center h-10 w-10 rounded-xl border border-primary-900/15 bg-secondary-50"
-              aria-label="Toggle menu"
-            >
-              {mobileOpen ? <X size={20} /> : <Menu size={20} />}
-            </button>
+                {/* Theme */}
+                <button
+                  type="button"
+                  onClick={toggleTheme}
+                  className="inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2 hover:bg-secondary-100 font-semibold transition"
+                >
+                  {theme === "dark" ? <Sun size={16} /> : <Moon size={16} />}
+                </button>
+              </div>
+
+              {/* MOBILE BUTTON */}
+              <button
+                onClick={() => setMobileOpen((v) => !v)}
+                className="lg:hidden inline-flex items-center justify-center h-10 w-10 rounded-xl border border-primary-900/15 bg-secondary-50"
+                aria-label="Toggle menu"
+              >
+                {mobileOpen ? <X size={20} /> : <Menu size={20} />}
+              </button>
+            </div>
           </div>
 
           {/* MOBILE MENU */}
@@ -327,29 +353,6 @@ export default function Navbar() {
               >
                 {t.nav.contact}
               </a>
-              {/* Language (flags) */}
-              <button
-                type="button"
-                onClick={toggleLang}
-                className="w-full inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2 hover:bg-secondary-100 font-semibold transition"
-                aria-label={lang === "es" ? t.nav.langToEN : t.nav.langToES}
-              >
-                {lang === "es" ? (
-                  <span className="fi fi-us"></span>
-                ) : (
-                  <span className="fi fi-mx"></span>
-                )}
-              </button>
-
-              {/* Theme */}
-              <button
-                type="button"
-                onClick={toggleTheme}
-                className="w-full inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2 hover:bg-secondary-100 font-semibold transition"
-              >
-                {theme === "dark" ? <Sun size={16} /> : <Moon size={16} />}
-                {theme === "dark" ? t.nav.light : t.nav.dark}
-              </button>
 
               <a
                 href="#consulta"

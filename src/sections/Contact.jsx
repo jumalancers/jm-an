@@ -74,7 +74,7 @@ export default function Contact() {
 
   return (
     <section id="consulta" className="py-16 sm:py-20 bg-bg mb-20">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="max-w-3xl">
           <div className="inline-flex items-center gap-2 rounded-full border border-primary-900/10 bg-secondary-50 px-4 py-2 sm:py-1.5 shadow-[0_6px_16px_rgba(0,0,0,0.06)]">
