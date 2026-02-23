@@ -122,7 +122,8 @@ export default function AliadosSection() {
                 </a>
 
                 <a
-                  href="/Aliados.docx"
+                  href="/Aliados.pdf"
+                  target="_blanck"
                   className="inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3
                              border border-primary-900/15 bg-bg hover:bg-secondary-100 transition
                              focus-ring t-body font-semibold text-[14px] text-primary-900"
@@ -190,7 +191,8 @@ export default function AliadosSection() {
               </div>
               <div className="lg:col-span-4 lg:flex lg:justify-end">
                 <a
-                  href="/Aliados.docx"
+                  href="/Aliados.pdf"
+                  target="_blanck"
                   className="inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3
                              border border-primary-900/15 bg-bg hover:bg-secondary-100 transition
                              focus-ring t-body font-semibold text-[14px] text-primary-900 w-full lg:w-auto"
