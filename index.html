@@ -1,54 +1,98 @@
 <!doctype html>
-<html lang="en">
+<html lang="es-MX">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <!-- TITLE: fuerte, local, y cubre el espectro sin sonar a lista infinita -->
     <title>
-      JM & AN | Abogados en Tijuana - Servicios Jurídicos Profesionales
+      JM & AN Abogados en Tijuana | Marcas, Contratos, Corporativo, Litigio y Notarial
     </title>
 
+    <!-- DESCRIPTION: vende el resultado, menciona el abanico, no se “encierra” -->
     <meta
       name="description"
-      content="Despacho jurídico JM & AN en Tijuana. Especialistas en derecho civil, familiar y mercantil. Asesoría legal profesional, ética y confidencial."
+      content="JM & AN Abogados en Tijuana. Estrategia legal para emprendedores y empresas: marcas y propiedad intelectual, contratos, derecho corporativo, litigio civil/mercantil/administrativo y gestión notarial. Respuestas claras, estructura y protección real."
     />
 
+    <!-- KEYWORDS: útil pero sin spam. Aquí sí cubres tus áreas con intención de búsqueda -->
     <meta
       name="keywords"
-      content="abogados en Tijuana, despacho jurídico Tijuana, derecho civil, derecho familiar, derecho mercantil, asesoría legal Baja California"
+      content="abogados en Tijuana, despacho jurídico Tijuana, abogados para emprendedores Tijuana, contratos mercantiles Tijuana, contratos civiles, NDA confidencialidad, derecho corporativo Tijuana, constitución de sociedades, actas de asamblea, poderes notariales, cumplimiento normativo, litigio mercantil Tijuana, litigio civil, defensa administrativa, conflictos entre socios, juicios sucesorios, registro de marca Tijuana, IMPI marcas, propiedad intelectual Tijuana, derechos de autor, oposiciones IMPI, nulidad caducidad marca, infracciones en comercio, gestión notarial Tijuana, testamentos, compraventa, donaciones, protocolización de sentencias"
     />
 
-    <meta name="author" content="JM & AN Servicios Jurídicos" />
+    <meta name="author" content="JM & AN Abogados" />
+    <meta name="robots" content="index,follow,max-image-preview:large" />
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://jmyanabogados.com/" />
 
     <!-- Open Graph -->
-    <meta property="og:title" content="JM & AN | Abogados en Tijuana" />
+    <meta property="og:locale" content="es_MX" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="JM & AN Abogados en Tijuana | Protección legal para negocios"
+    />
     <meta
       property="og:description"
-      content="Servicios jurídicos profesionales en Tijuana. Confianza, experiencia y respaldo legal."
+      content="Estrategia legal para emprendedores y empresas en Tijuana: marcas, contratos, corporativo, litigio y gestión notarial. Te respondemos con claridad."
     />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://jmyanabogados.com" />
+    <meta property="og:url" content="https://jmyanabogados.com/" />
     <meta property="og:image" content="https://jmyanabogados.com/Banner.jpg" />
+    <meta
+      property="og:image:alt"
+      content="JM & AN Abogados en Tijuana - Servicios legales para negocios"
+    />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="JM & AN | Abogados en Tijuana" />
+    <meta
+      name="twitter:title"
+      content="JM & AN Abogados en Tijuana | Marcas, contratos y defensa legal"
+    />
     <meta
       name="twitter:description"
-      content="Despacho jurídico profesional en Tijuana."
+      content="Estrategia legal para emprendedores y empresas: propiedad intelectual, contratos, corporativo, litigio y gestión notarial."
     />
     <meta name="twitter:image" content="https://jmyanabogados.com/Banner.jpg" />
 
+    <!-- Performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
     <link
       href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@200;300;400;600;700;900&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
 
     <link rel="icon" href="/favicon.ico" />
+
+    <!-- (Opcional pero MUY recomendado) Structured Data: ayuda a SEO local -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LegalService",
+        "name": "JM & AN Abogados",
+        "url": "https://jmyanabogados.com/",
+        "image": "https://jmyanabogados.com/Banner.jpg",
+        "areaServed": "Tijuana, Baja California, MX",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Tijuana",
+          "addressRegion": "BC",
+          "addressCountry": "MX"
+        },
+        "serviceType": [
+          "Litigio civil, mercantil y administrativo",
+          "Derecho corporativo",
+          "Propiedad intelectual",
+          "Derecho contractual",
+          "Gestión notarial"
+        ]
+      }
+    </script>
   </head>
+
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
